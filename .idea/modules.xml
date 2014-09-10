@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/gradle.iml" filepath="$PROJECT_DIR$/gradle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subGradle1/subGradle1.iml" filepath="$PROJECT_DIR$/subGradle1/subGradle1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/subGradle2/subGradle2.iml" filepath="$PROJECT_DIR$/subGradle2/subGradle2.iml" />
+    </modules>
+  </component>
+</project>
+

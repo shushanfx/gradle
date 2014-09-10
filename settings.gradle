@@ -1,0 +1,6 @@
+rootProject.name = 'gradle'
+
+include 'subGradle1'
+
+include 'subGradle2'
+
