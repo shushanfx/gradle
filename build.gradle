@@ -1,4 +1,27 @@
 apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: DateAndTimePlugin
+
+
+class DateAndTimePlugin implements Plugin<Project> {
+    void apply(Project project) {
+
+        project.extensions.create("dateAndTime", DateAndTimePluginExtension)
+
+        project.task('showTime') << {
+            println "Current time is " + new Date().format(project.dateAndTime.timeFormat)
+        }
+
+        project.tasks.create('showDate') << {
+            println "Current date is " + new Date().format(project.dateAndTime.dateFormat)
+        }
+    }
+}
+
+class DateAndTimePluginExtension {
+    String timeFormat = "MM/dd/yyyy HH:mm:ss.SSS"
+    String dateFormat = "yyyy-MM-dd"
+}
 
 sourceCompatibility = 1.5
 version = '1.0'
@@ -42,3 +65,4 @@ subprojects {
         println project.name
     }
 }
+
