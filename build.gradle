@@ -33,3 +33,12 @@ allprojects {
         println project.name
     }
 }
+
+subprojects {
+    apply plugin: 'idea'
+    apply plugin: 'java'
+
+    task subTask << {
+        println project.name
+    }
+}
