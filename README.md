@@ -1,5 +1,5 @@
 # This is Git help file.
-git init
+git init  \n
 git add fileName
 git commit -m "Message"
 git remote add remoteName URL
