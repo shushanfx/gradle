@@ -1,0 +1,11 @@
+apply plugin: 'java'
+
+buildDir = "shushanfx"
+compileJava.destinationDir = file("$buildDir/output/classes")
+task show << {
+    println relativePath(compileJava.destinationDir)
+}
+
+task showSourceSets << {
+    sourceSets.each {item -> println item}
+}

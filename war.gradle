@@ -1,0 +1,7 @@
+apply(plugin: "war")
+
+version = 1.0
+
+task showSourceSets << {
+    println "ShowSourceSets"
+}

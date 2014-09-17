@@ -1,0 +1,35 @@
+apply plugin: 'java'
+version = 1.0
+
+task file1 {
+    File srcDir
+    // Create a file collection using a closure
+    def collection = files { srcDir.listFiles() }
+    srcDir = file('src')
+    println "Contents of $srcDir.name"
+    collection.collect { relativePath(it) }.sort().each { println it }
+    srcDir = file('src2')
+    println "Contents of $srcDir.name"
+    collection.collect { relativePath(it) }.sort().each { println it }
+}
+task file2 {
+    def tree = fileTree(dir: 'src', include: '*/*')
+    tree.each {File file -> println file.name}
+
+    tree.visit {element ->
+        println "$element.relativePath => $element.file"
+    }
+}
+
+task file3 {
+    FileTree zip = zipTree('helper/gradle-2.1-all.zip')
+    zip.visit {element ->
+        println "$element.relativePath => $element.file"
+    }
+}
+task myZip(type: Zip) {
+    from 'src'
+}
+println myZip.archiveName
+println relativePath(myZip.destinationDir)
+println relativePath(myZip.archivePath)

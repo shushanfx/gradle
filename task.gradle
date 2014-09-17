@@ -1,0 +1,18 @@
+version = 1.0
+
+task task1 << {
+    println "task1"
+}
+task task2  {
+    println "task2"
+    doFirst {
+        println "before task2"
+    }
+    doLast {
+        println "after task2"
+    }
+}
+task2.dependsOn task1
+task task3 {
+    println "task3"
+}
