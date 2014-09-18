@@ -8,4 +8,12 @@ public class Main {
         System.out.println("Hello Gradle...");
 
     }
+
+    public void test(String str){
+        System.out.println(str);
+    }
+
+    public String get(String str){
+        return str;
+    }
 }

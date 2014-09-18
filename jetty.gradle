@@ -1,2 +1,17 @@
 apply plugin : "jetty"
 
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+//jetty.contenxtPath "/shushanfx"
+httpPort = 8080
+jettyRun {
+    httpPort = 80 // ∏√≈‰÷√”≈”⁄httpPort
+    contextPath = "/"
+    reload = "manual"
+}
